@@ -1,0 +1,52 @@
+<h1>Student Grade report</h1>
+<table>
+  <tr>
+    <th>Student ID</th>
+    <th>S1</th>
+    <th>S2</th>
+    <th>S3</th>
+    <th>S4</th>
+    <th>Total</th>
+    <th>Grade</th>
+    <th>Average-Compare</th>
+  </tr>
+  <% @students.each do |student| %>
+	  <tr>
+	    <td><%= student.student_id %></td>
+	    <td><%= student.s1 %></td>
+	    <td><%= student.s2 %></td>
+	    <td><%= student.s3 %></td>
+	    <td><%= student.s4 %></td>
+	    <td><%= student.s1 + student.s2 + student.s3 + student.s4 %></td>
+	    <td><%= student.grade %></td>
+	    <td><%= student.above_average == true ? 'Above' : 'Below' %></td>
+	  </tr>
+	<% end %>
+</table>
+
+<h2>Number of Students in Each Grade:</h2>
+  <% @grades_count.each do |grade, count| %>
+    <p><%= grade %>: <%= count %> students</p>
+  <% end %>
+
+<h2>Number of Students Above Average: <%= @above_average_count %></h2>
+<h2>Number of Students Below Average: <%= @below_average_count %></h2>
+
+<style type="text/css">
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</style>
