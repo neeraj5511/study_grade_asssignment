@@ -17,9 +17,9 @@
 	    <td><%= student.s2 %></td>
 	    <td><%= student.s3 %></td>
 	    <td><%= student.s4 %></td>
-	    <td><%= student.s1 + student.s2 + student.s3 + student.s4 %></td>
+	    <td><%= total_score(student) %></td>
 	    <td><%= student.grade %></td>
-	    <td><%= student.above_average == true ? 'Above' : 'Below' %></td>
+	    <td><%= check_below_or_above(student) %></td>
 	  </tr>
 	<% end %>
 </table>
